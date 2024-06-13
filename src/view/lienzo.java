@@ -30,6 +30,7 @@ public class lienzo extends JPanel implements parametrizable{
 		hm1=80;
 		//Datos de posicion de la nube
 		xn1=10;
+		yn1=10;
 		//Datos de gomba
 		xg1=350;
 		yg1=205;
@@ -43,7 +44,9 @@ public class lienzo extends JPanel implements parametrizable{
 		g2.drawImage(fondo.getImage(), 0, 0, 400, 300, null);
 		//Nubes
 		for(int i=0;i<400;i+=80) {
-			g2.drawImage(nube.getImage(), xn1+i, (int)(Math.random()*100), 50, 50, null);
+//			g2.drawImage(nube.getImage(), xn1+i, (int)(Math.random()*100), 50, 50, null);
+			g2.drawImage(nube.getImage(), xn1+i, yn1, 50, 50, null);
+			
 		}
 		//Mario
 		g2.drawImage(mario.getImage(), xm1, ym1, wm1, hm1, null);

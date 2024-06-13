@@ -1,12 +1,18 @@
 package controller;
 import view.lienzo;
-public class process extends Thread {
+public class processObjectMotion extends Thread {
 	private lienzo lienzo;
 	private int pm=5,pg=350;
+	
 
-	public process(view.lienzo lienzo) {
+	public processObjectMotion(view.lienzo lienzo) {
 		super();
 		this.lienzo = lienzo;
+	}
+	public void motionMario(int value) {
+		pm+=value;
+		lienzo.setXm1(pm);
+		lienzo.repaint();
 	}
 	public void run() {
 		for(int i=0;i<200;i++) {
@@ -16,7 +22,7 @@ public class process extends Thread {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			lienzo.setXm1(pm++);
+			
 			lienzo.setXg1(pg--);
 			lienzo.repaint();
 			
